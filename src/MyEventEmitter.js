@@ -33,7 +33,7 @@ class MyEventEmitter {
     if (!this.events[eventName]) {
       return;
     }
-    this.events[eventName].forEach((listener) => listener(...args));
+    [...this.events[eventName]].forEach((listener) => listener(...args));
   }
   prependListener(eventName, listener) {
     if (!this.events[eventName]) {
